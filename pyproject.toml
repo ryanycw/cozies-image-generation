@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "cozies-image-generation"
+version = "0.1.0"
+description = ""
+authors = ["ryanycw <ryan0213.tem04@nctu.edu.tw>"]
+readme = "README.md"
+packages = [{include = "cozies_image_generation"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+numpy = "^1.23.3"
+pandas = "^1.5.0"
+tqdm = "^4.64.1"
+Pillow = "^9.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
