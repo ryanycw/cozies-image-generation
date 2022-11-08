@@ -15,8 +15,10 @@ def main():
     utils.logs.mkdir(env.jsonResultPath)
 
     #core.image.generateImgRecord(mode, selectAmount)
-    core.image.genFinalJpgInBatch(env.logFile, env.propertiesListInOrder)
+    #core.image.genFinalJpgInBatch(env.logFile, env.propertiesListInOrder)
     #core.image.genJson(env.logFile)
+
+    utils.miscellaneous.calDistribution(env.logFile)
 
     #core.ticket.genJson()
 
