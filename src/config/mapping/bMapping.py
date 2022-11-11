@@ -1,17 +1,18 @@
 mapping = {
-    "B01": "Cloud",
-    "B02": "Wave",
+    "B00": "None",
+    "B01": "Clouds",
+    "B02": "Waves",
     "B03": "Fog",
-    "B04": "Leaf",
-    "B05": "Leaf",
-    "B06": "Mountain",
+    "B04": "Storm",
+    "B05": "Wind",
+    "B06": "Mountains",
     "B07": "Moon",
-    "B08": "Dune",
+    "B08": "Dunes",
     "B09": "Ripple",
-    "B10": "Bubble",
-    "B11": "Jungle",
-    "B12": "Cozy Station",
+    "B10": "Bubbles",
+    "B11": "The Wild",
+    "B12": "Platform",
     "B13": "Tundra",
     "B14": "Foam",
-    "B15": "Tech Wall"
+    "B15": "Cyber Space"
 }
