@@ -16,9 +16,12 @@ def main():
 
     #core.image.generateImgRecord(mode, selectAmount)
     #core.image.genFinalJpgInBatch(env.logFile, env.propertiesListInOrder)
+    #core.image.ipfsUploadFiles(env.logFile)
+    #core.image.ipfsRm()
     #core.image.genJson(env.logFile)
+    core.image.uploadMetadata(env.logFile)
 
-    utils.miscellaneous.calDistribution(env.logFile)
+    #utils.miscellaneous.calDistribution(env.logFile)
 
     #core.ticket.genJson()
 
