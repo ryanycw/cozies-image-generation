@@ -1,4 +1,4 @@
-# cozies-image-generation
+# Cozies Image Generation
 
 ### Checks
 - If there is a None Start From 00
