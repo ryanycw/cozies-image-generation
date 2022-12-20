@@ -1,12 +1,13 @@
 import csv
 from itertools import zip_longest
 import pandas as pd
+import config.mapping
 
 def calDistribution(logFile):
     record = pd.read_csv(logFile, header=None)
     prob = [{} for _ in range(12)]
 
-    for _,row in record.iterrows():
+    for _,row in record[:482].iterrows():
         prob[0][row[0]] = prob[0][row[0]] + 1 if prob[0].get(row[0]) else 1
         prob[1][row[1]] = prob[1][row[1]] + 1 if prob[1].get(row[1]) else 1
         prob[2][row[2]] = prob[2][row[2]] + 1 if prob[2].get(row[2]) else 1
@@ -20,13 +21,26 @@ def calDistribution(logFile):
         prob[10][row[10]] =prob[10][row[10]] + 1 if prob[10].get(row[10]) else 1
         prob[11][row[11]] =prob[11][row[11]] + 1 if prob[11].get(row[11]) else 1
 
+    prob = [dict(sorted(dic.items())) for dic in prob] # 
+
     output = []
-    for i in prob:
-        output.append(list(i.keys()))
+    for idx, i in enumerate(prob):
+        if idx == 0: output.append(list(config.mapping.aMapping.mapping.values()))
+        if idx == 1: output.append(list(config.mapping.bMapping.mapping.values()))
+        if idx == 2: output.append(list(config.mapping.cMapping.mapping.values()))
+        if idx == 3: output.append(list(config.mapping.dMapping.mapping.values()))
+        if idx == 4: output.append(list(config.mapping.eMapping.mapping.values()))
+        if idx == 5: output.append(list(config.mapping.fMapping.mapping.values()))
+        if idx == 6: output.append(list(config.mapping.gMapping.mapping.values()))
+        if idx == 7: output.append(list(config.mapping.hMapping.mapping.values()))
+        if idx == 8: output.append(list(config.mapping.iMapping.mapping.values()))
+        if idx == 9: output.append(list(config.mapping.jMapping.mapping.values()))
+        if idx == 10: output.append(list(config.mapping.kMapping.mapping.values()))
+        if idx == 11: output.append(list(config.mapping.lMapping.mapping.values()))
         output.append(list(i.values()))
 
     exportData = zip_longest(*output, fillvalue = '')
-    with open("out/prob/distribution.csv", 'w', newline='') as outputFile:
+    with open("out/prob/distribution-482.csv", 'w', newline='') as outputFile:
         wr = csv.writer(outputFile)
         wr.writerows(exportData)
         outputFile.close()
